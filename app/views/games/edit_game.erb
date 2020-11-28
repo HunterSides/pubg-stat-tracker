@@ -1,7 +1,17 @@
 <h2> Edit Game </h2>
 
 <form method="post" action="/games/<%=@game.id%>">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p>Name:<input id="hidden" type="hidden" name="_method" value="PATCH"></p>
   <input type="text" name="content" value="<%= @game.content %>">
+  <p>Damage:<input id="hidden" type="hidden" name="_method" value="PATCH"></p>
+  <input type="text" name="content" value="<%= @game.damage_done %>">
+  <p>Kills:<input id="hidden" type="hidden" name="_method" value="PATCH"></p>
+  <input type="text" name="content" value="<%= @game.kill_amount %>">
+  <p>Placement:<input id="hidden" type="hidden" name="_method" value="PATCH"></p>
+  <input type="text" name="content" value="<%= @game.placement %>">
   <input type="submit" value="submit">
 </form>
+
+
+
+

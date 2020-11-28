@@ -1,4 +1,7 @@
 <p><%= @game.content %>
+<p>Damage: <%= @game.damage_done %>
+<p>Kills: <%= @game.kill_amount %>
+<p>Placement: <%= @game.placement %>
 
 <form method="post" action="/games/<%=@game.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

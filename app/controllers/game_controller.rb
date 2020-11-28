@@ -21,7 +21,8 @@ class GamesController < ApplicationController
         if params[:content] == ""
           redirect to "/games/new"
         else
-          @game = current_user.games.build(content: params[:content])
+          @game = current_user.games.build(content: params[:content],damage_done: params[:damage_done],kill_amount: params[:kill_amount],placement: params[:placement])
+          
           if @game.save
             redirect to "/games/#{@game.id}"
           else

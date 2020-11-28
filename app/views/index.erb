@@ -5,10 +5,10 @@ This is a platform for you to manually add your stats for each game to track you
 
 <nav>
   <% if logged_in? %>
-
+    <p>Welcome, <%=current_user.username %></p>
     <a href="/games/new"> Add Game </a>
     <a href="/logout"> Log Out </a>
-    <p>Welcome, <%=current_user.username %></p>
+    
 
   <% else %>
     <a href="/signup">Sign Up</a>
