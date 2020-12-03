@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/login' do
+  get '/login' do #when requesting /login if user isalready logged in for current session go to games, else go to /login
     if !logged_in?
       erb :'users/login'
     else
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/login' do
+  post '/login' do #method which states if username && password match redirect to /games else to /signup
     user = User.find_by(:username => params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
