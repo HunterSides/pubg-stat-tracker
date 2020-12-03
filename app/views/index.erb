@@ -1,16 +1,18 @@
 
-<h2 style="margin-left: .5em;"> 
+<p style="margin-left: .5em;"> 
 This is a platform for you to manually add your stats for each game to track your progression!</h2>
-<h3>Please signin or signup :</h3>
+
 
 <nav>
   <% if logged_in? %>
-    <p>Welcome, <%=current_user.username %></p>
+    <h3>Welcome, <%=current_user.username %></h3>
+    <a href="/games"> View Games</a>
     <a href="/games/new"> Add Game </a>
     <a href="/logout"> Log Out </a>
     
 
   <% else %>
+  <h3>Please signin or signup :</p>
     <a href="/signup">Sign Up</a>
     <a href="/login"> Sign In </a>
   <%end %>
