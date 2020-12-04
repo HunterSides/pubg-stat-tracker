@@ -63,7 +63,7 @@ class GamesController < ApplicationController
         else
           @game = Game.find_by_id(params[:id])
           if @game && @game.user == current_user
-            if @game.update(content: params[:content])
+            if @game.update(content: params[:content],damage_done: params[:damage_done],kill_amount: params[:kill_amount],placement: params[:placement])
               redirect to "/games/#{@game.id}"
             else
               redirect to "/games/#{@game.id}/edit"
